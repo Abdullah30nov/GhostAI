@@ -1,0 +1,63 @@
+.video-trimmer {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.video-trimmer h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 24px;
+  color: #00d1ff;
+}
+
+.video-preview {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.slider-container > div {
+  flex: 1;
+  min-width: 150px;
+}
+
+.slider-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  color: #ccc;
+}
+
+input[type='range'] {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+}
+
+input[type='file'] {
+  display: block;
+  margin: 1rem auto;
+  background-color: #00d1ff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type='file']:hover {
+  background-color: #00aacc;
+}
