@@ -555,7 +555,8 @@ function App() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer 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",
+          // Authorization: `Bearer ${process.env.SECRET_KEY}`,
+          Authorization: `Bearer ${import.meta.env.VITE_SECRET_KEY}`,
           "HTTP-Referer": "https://yourdomain.com",
           "X-Title": "MyGPT"
         },
