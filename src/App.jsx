@@ -528,7 +528,7 @@
 
 
 
-
+"use client"
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
@@ -541,24 +541,28 @@ function App() {
   const bottomRef = useRef(null);
 
   const handleSubmit = async () => {
+    console.log("data"  , import.meta.env.VITE_SECRET_KEY)
     if (!input.trim()) return;
 
     setLoading(true);
+    // model: "openrouter/cypher-alpha:free",
     const requestBody = {
-      model: "openrouter/cypher-alpha:free",
+      model: "mistralai/mistral-small-3.2-24b-instruct:free",
       messages: [{ role: "user", content: input }],
       max_tokens: 100
     };
 
+    // Authorization: `Bearer ${process.env.SECRET_KEY}`,
+    // "HTTP-Referer": "https://yourdomain.com",
+    // "X-Title": "MyGPT"
+    // Authorization: `Bearer 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`,
+    // Authorization: `Bearer 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`,
     try {
       const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Authorization: `Bearer ${process.env.SECRET_KEY}`,
-          Authorization: `Bearer ${import.meta.env.VITE_SECRET_KEY}`,
-          "HTTP-Referer": "https://yourdomain.com",
-          "X-Title": "MyGPT"
+          Authorization: `Bearer ${import.meta.env.VITE_SECRET_KEYS}`,
         },
         body: JSON.stringify(requestBody)
       });
